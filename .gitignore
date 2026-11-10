@@ -1,0 +1,10 @@
+# Outils et sorties locales
+.agents/
+.claude/
+skills-lock.json
+site/
+
+# Système
+.DS_Store
+Thumbs.db
+desktop.ini

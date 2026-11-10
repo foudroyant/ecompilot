@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EcomPilot — Toute votre boutique, sur un seul écran</title>
+  <meta name="description" content="Commandes, livraisons, stocks et ventes réunis dans un tableau de bord clair, pensé pour les boutiques en ligne d'Afrique francophone.">
+  <meta property="og:title" content="EcomPilot — Toute votre boutique, sur un seul écran">
+  <meta property="og:description" content="Le tableau de bord des boutiques en ligne d'Afrique francophone.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icon-192.svg">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#1F5C4A">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="EcomPilot, accueil">
+        <svg class="logo__icon" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+          <path d="M45.4 50.4A28 28 0 1 1 18.6 50.4" fill="none" stroke="#1F5C4A" stroke-width="6" stroke-linecap="round"/>
+          <path d="M18.6 50.4A22 22 0 0 1 50 26" fill="none" stroke="#7BC4A4" stroke-width="6" stroke-linecap="round"/>
+          <circle cx="50" cy="26" r="5" fill="#D9703F"/>
+        </svg>
+        <span class="logo__word"><span class="logo__ecom">Ecom</span><span class="logo__pilot">Pilot</span></span>
+      </a>
+
+      <nav class="nav-primary" aria-label="Navigation principale">
+        <a href="#fonctionnalites">Fonctionnalités</a>
+        <a href="#catalogue">Catalogue</a>
+        <a href="#temoignages">Témoignages</a>
+        <a href="#essai">Tarifs</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="link-quiet" href="dashboard.html">Se connecter</a>
+        <button class="icon-btn nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Ouvrir le menu">
+          <span data-icon="menu"></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-nav" id="mobile-nav">
+      <a href="#fonctionnalites">Fonctionnalités</a>
+      <a href="#catalogue">Catalogue</a>
+      <a href="#temoignages">Témoignages</a>
+      <a href="#essai">Tarifs</a>
+      <a href="dashboard.html">Se connecter</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero : promesse + application réelle en aperçu -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="hero__head">
+          <h1 class="hero__title" id="hero-title">Toute votre boutique,<br>sur un seul écran.</h1>
+          <div class="hero__aside">
+            <p class="hero__lead">Commandes, livraisons, stocks et ventes réunis dans un tableau de bord clair.</p>
+            <div class="hero__actions">
+              <a class="btn btn--primary btn--lg" href="dashboard.html">Essai gratuit</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="app-preview" role="img" aria-label="Aperçu de l'application EcomPilot : chiffre d'affaires 3 850 000 FCFA sur les 30 derniers jours, 520 commandes reçues, 385 livrées, 75 en attente, 60 en cours de livraison.">
+          <div class="app-preview__chrome" aria-hidden="true">
+            <span class="app-preview__dots"><i></i><i></i><i></i></span>
+            <span class="app-preview__url">app.ecompilot.com/tableau-de-bord</span>
+            <span class="app-preview__tag">Démo</span>
+          </div>
+
+          <div class="app-preview__app">
+            <aside class="app-preview__rail" aria-hidden="true">
+              <span class="app-preview__rail-brand">
+                <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+                  <path d="M45.4 50.4A28 28 0 1 1 18.6 50.4" fill="none" stroke="#FBF8F3" stroke-width="6" stroke-linecap="round"/>
+                  <path d="M18.6 50.4A22 22 0 0 1 50 26" fill="none" stroke="#FBF8F3" stroke-width="6" stroke-linecap="round" opacity=".6"/>
+                  <circle cx="50" cy="26" r="5" fill="#FBF8F3"/>
+                </svg>
+              </span>
+              <span class="app-preview__nav-item is-active"><span data-icon="layout-dashboard" data-icon-size="16"></span><span>Vue d'ensemble</span></span>
+              <span class="app-preview__nav-item"><span data-icon="shopping-bag" data-icon-size="16"></span><span>Commandes</span></span>
+              <span class="app-preview__nav-item"><span data-icon="truck" data-icon-size="16"></span><span>Livraisons</span></span>
+              <span class="app-preview__nav-item"><span data-icon="package" data-icon-size="16"></span><span>Produits</span></span>
+              <span class="app-preview__nav-item"><span data-icon="chart-line" data-icon-size="16"></span><span>Statistiques</span></span>
+              <span class="app-preview__avatar">SB</span>
+            </aside>
+
+            <div class="app-preview__main">
+              <div class="app-preview__top">
+                <div>
+                  <p class="app-preview__title">Vue d'ensemble</p>
+                  <p class="app-preview__date">Mardi 10 novembre 2026, 30 derniers jours</p>
+                </div>
+                <div class="app-preview__pills" aria-hidden="true">
+                  <span class="app-preview__pill">7 j</span>
+                  <span class="app-preview__pill is-active">30 j</span>
+                  <span class="app-preview__pill">12 mois</span>
+                </div>
+              </div>
+
+              <div class="app-preview__kpis" id="hero-kpis"></div>
+
+              <div class="app-preview__grid">
+                <div class="app-preview__card">
+                  <div class="app-preview__card-head">
+                    <span class="app-preview__card-title">Ventes quotidiennes</span>
+                    <span class="app-preview__card-meta">12 oct. – 10 nov.</span>
+                  </div>
+                  <div id="hero-chart"></div>
+                </div>
+
+                <div class="app-preview__card app-preview__card--donut">
+                  <div class="app-preview__card-head">
+                    <span class="app-preview__card-title">Statuts</span>
+                    <span class="app-preview__card-meta">520 reçues</span>
+                  </div>
+                  <div class="app-preview__donut">
+                    <div id="hero-donut"></div>
+                    <ul class="app-preview__legend" id="hero-legend"></ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fonctionnalités -->
+    <section class="section" id="fonctionnalites" aria-labelledby="features-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title" id="features-title">Commandes, livraisons, produits et statistiques</h2>
+          <p class="section-lead">Quatre modules, chacun avec ses gestes propres, sans tableur ni cahier.</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-media">
+            <img src="assets/img/livraison.jpg" alt="Un triporteur vert chargé de colis traverse une rue commerçante, entre arbres et bâtiments colorés." width="1024" height="1024" loading="lazy">
+          </div>
+
+          <div class="feature-cards">
+            <article class="feature">
+              <div class="feature__art">
+                <svg viewBox="0 0 240 88" aria-hidden="true" focusable="false">
+                  <g transform="translate(22 10)">
+                    <rect width="132" height="30" rx="8" fill="#FFFFFF" stroke="#D3E3D9"/>
+                    <circle cx="16" cy="15" r="5.5" fill="#EAF4EE" stroke="#7BC4A4" stroke-width="1.5"/>
+                    <rect x="28" y="9" width="46" height="4.5" rx="2.25" fill="#1E2420" opacity=".8"/>
+                    <rect x="28" y="18" width="30" height="3.5" rx="1.75" fill="#6B6A63" opacity=".45"/>
+                    <rect x="98" y="9" width="24" height="12" rx="6" fill="#EDF6F1"/>
+                    <circle cx="104" cy="15" r="2.2" fill="#2E8B57"/>
+                  </g>
+                  <g transform="translate(34 48)">
+                    <rect width="132" height="30" rx="8" fill="#FFFFFF" stroke="#D3E3D9"/>
+                    <circle cx="16" cy="15" r="5.5" fill="#FBEDE5" stroke="#D9703F" stroke-width="1.5"/>
+                    <rect x="28" y="9" width="54" height="4.5" rx="2.25" fill="#1E2420" opacity=".8"/>
+                    <rect x="28" y="18" width="34" height="3.5" rx="1.75" fill="#6B6A63" opacity=".45"/>
+                    <rect x="98" y="9" width="24" height="12" rx="6" fill="#FBEDE5"/>
+                    <circle cx="104" cy="15" r="2.2" fill="#D9703F"/>
+                  </g>
+                  <g transform="translate(180 30)">
+                    <rect width="38" height="38" rx="11" fill="#1F5C4A"/>
+                    <path d="M11 20l5.5 5.5L27 14" fill="none" stroke="#FBF8F3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                  </g>
+                </svg>
+              </div>
+              <h3>Commandes</h3>
+              <p>Chaque commande arrive avec son client, son produit et son montant.</p>
+              <ul class="feature__list">
+                <li>Confirmation, préparation, facture</li>
+                <li>Recherche par client, ville ou numéro</li>
+              </ul>
+            </article>
+
+            <article class="feature">
+              <div class="feature__art">
+                <svg viewBox="0 0 240 88" aria-hidden="true" focusable="false">
+                  <rect x="22" y="10" width="196" height="68" rx="12" fill="#FFFFFF" stroke="#D3E3D9"/>
+                  <path d="M42 62C70 62 72 30 104 34s44 20 72-8" fill="none" stroke="#7BC4A4" stroke-width="2" stroke-dasharray="4 6" stroke-linecap="round"/>
+                  <circle cx="42" cy="62" r="5" fill="#1F5C4A"/>
+                  <circle cx="42" cy="62" r="2" fill="#FBF8F3"/>
+                  <circle cx="104" cy="34" r="4" fill="#FFFFFF" stroke="#1F5C4A" stroke-width="2"/>
+                  <g transform="translate(176 18)">
+                    <path d="M0 0c-4.5 0-8 3.6-8 8 0 6.2 8 13 8 13s8-6.8 8-13c0-4.4-3.5-8-8-8z" fill="#D9703F"/>
+                    <circle cx="0" cy="8" r="2.8" fill="#FBF8F3"/>
+                  </g>
+                </svg>
+              </div>
+              <h3>Livraisons</h3>
+              <p>Les tournées se préparent par zone et le statut des colis se met à jour.</p>
+              <ul class="feature__list">
+                <li>Tournées groupées par ville</li>
+                <li>Colis suivis jusqu'à la remise</li>
+              </ul>
+            </article>
+
+            <article class="feature">
+              <div class="feature__art">
+                <svg viewBox="0 0 240 88" aria-hidden="true" focusable="false">
+                  <rect x="22" y="10" width="196" height="68" rx="12" fill="#FFFFFF" stroke="#D3E3D9"/>
+                  <g transform="translate(32 18)">
+                    <rect width="176" height="24" rx="7" fill="#FBF8F3" stroke="#E7E0D3"/>
+                    <rect x="6" y="4" width="16" height="16" rx="5" fill="#EAF4EE" stroke="#7BC4A4" stroke-width="1.5"/>
+                    <rect x="30" y="7" width="48" height="4" rx="2" fill="#1E2420" opacity=".8"/>
+                    <rect x="30" y="15" width="30" height="3" rx="1.5" fill="#6B6A63" opacity=".45"/>
+                    <rect x="138" y="6" width="30" height="12" rx="6" fill="#EDF6F1"/>
+                    <circle cx="144" cy="12" r="2" fill="#2E8B57"/>
+                  </g>
+                  <g transform="translate(32 48)">
+                    <rect width="176" height="24" rx="7" fill="#FBF8F3" stroke="#E7E0D3"/>
+                    <rect x="6" y="4" width="16" height="16" rx="5" fill="#FBEDE5" stroke="#D9703F" stroke-width="1.5"/>
+                    <rect x="30" y="7" width="56" height="4" rx="2" fill="#1E2420" opacity=".8"/>
+                    <rect x="30" y="15" width="34" height="3" rx="1.5" fill="#6B6A63" opacity=".45"/>
+                    <rect x="138" y="6" width="30" height="12" rx="6" fill="#FBEDE5"/>
+                    <circle cx="144" cy="12" r="2" fill="#D9703F"/>
+                  </g>
+                </svg>
+              </div>
+              <h3>Produits</h3>
+              <p>Le catalogue garde le prix, le stock et la disponibilité de chaque référence.</p>
+              <ul class="feature__list">
+                <li>Stock et prix centralisés</li>
+                <li>Alerte sur les stocks faibles</li>
+              </ul>
+            </article>
+
+            <article class="feature">
+              <div class="feature__art">
+                <svg viewBox="0 0 240 88" aria-hidden="true" focusable="false">
+                  <rect x="22" y="10" width="196" height="68" rx="12" fill="#FFFFFF" stroke="#D3E3D9"/>
+                  <line x1="40" y1="28" x2="198" y2="28" stroke="#F1EBDF"/>
+                  <line x1="40" y1="46" x2="198" y2="46" stroke="#F1EBDF"/>
+                  <line x1="40" y1="64" x2="198" y2="64" stroke="#F1EBDF"/>
+                  <path d="M40 58L70 50L100 54L130 40L160 44L198 26L198 64L40 64Z" fill="#7BC4A4" opacity=".22"/>
+                  <path d="M40 58L70 50L100 54L130 40L160 44L198 26" fill="none" stroke="#1F5C4A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="130" cy="40" r="3" fill="#FFFFFF" stroke="#1F5C4A" stroke-width="2"/>
+                  <circle cx="198" cy="26" r="3.5" fill="#D9703F"/>
+                </svg>
+              </div>
+              <h3>Statistiques</h3>
+              <p>Le chiffre d'affaires et les tendances se lisent sans tableur.</p>
+              <ul class="feature__list">
+                <li>Vues 7 jours, 30 jours, 12 mois</li>
+                <li>Produits les plus vendus</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Catalogue -->
+    <section class="section section--sand" id="catalogue" aria-labelledby="catalogue-title">
+      <div class="container catalogue-grid">
+        <div class="catalogue-media">
+          <img src="assets/img/produits.jpg" alt="Vue de dessus d'un étal : tissus wax pliés, panier tressé, bols d'épices et fruits frais." width="1024" height="1024" loading="lazy">
+        </div>
+
+        <div class="catalogue-copy">
+          <h2 class="section-title" id="catalogue-title">Un catalogue qui vit avec vos stocks</h2>
+          <p class="section-lead">Chaque référence garde son prix, son stock et son statut. Une pièce vendue met le catalogue à jour.</p>
+
+          <ul class="stock-list">
+            <li class="stock-item">
+              <span class="stock-item__name">Tissu wax, 6 yards</span>
+              <span class="stock-item__meta"><span class="stock-item__dot"></span> En stock, 12 pièces</span>
+              <span class="stock-item__price">25 000 FCFA</span>
+            </li>
+            <li class="stock-item">
+              <span class="stock-item__name">Panier tressé</span>
+              <span class="stock-item__meta stock-item__meta--low"><span class="stock-item__dot"></span> Stock faible, 4 pièces</span>
+              <span class="stock-item__price">15 000 FCFA</span>
+            </li>
+            <li class="stock-item">
+              <span class="stock-item__name">Épices (mélange)</span>
+              <span class="stock-item__meta"><span class="stock-item__dot"></span> En stock, 38 sachets</span>
+              <span class="stock-item__price">6 500 FCFA</span>
+            </li>
+            <li class="stock-item">
+              <span class="stock-item__name">Huile de palme artisanale</span>
+              <span class="stock-item__meta"><span class="stock-item__dot"></span> En stock, 21 flacons</span>
+              <span class="stock-item__price">12 500 FCFA</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Témoignages -->
+    <section class="section" id="temoignages" aria-labelledby="testimonials-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title" id="testimonials-title">Ils pilotent déjà leur boutique</h2>
+        </div>
+
+        <div class="testimonial-grid">
+          <figure class="testimonial">
+            <blockquote>« Avant, je tenais mes commandes dans un cahier. Aujourd'hui, tout est sur un seul écran. »</blockquote>
+            <figcaption class="testimonial__author">
+              <span class="avatar avatar--mint" aria-hidden="true">GL</span>
+              <span>
+                <span class="author-name">Grâce Loubaki</span><br>
+                <span class="author-role">Gérante d'une boutique de textiles à Brazzaville</span>
+              </span>
+            </figcaption>
+          </figure>
+
+          <figure class="testimonial">
+            <blockquote>« Le suivi des livraisons a divisé par deux nos appels clients. »</blockquote>
+            <figcaption class="testimonial__author">
+              <span class="avatar avatar--clay" aria-hidden="true">AM</span>
+              <span>
+                <span class="author-name">Aurélien Massamba</span><br>
+                <span class="author-role">Fondateur d'une épicerie en ligne à Pointe-Noire</span>
+              </span>
+            </figcaption>
+          </figure>
+
+          <figure class="testimonial">
+            <blockquote>« Je vois enfin quels produits tournent, sans être comptable. »</blockquote>
+            <figcaption class="testimonial__author">
+              <span class="avatar avatar--forest" aria-hidden="true">NM</span>
+              <span>
+                <span class="author-name">Nadège Mbemba</span><br>
+                <span class="author-role">Responsable d'un atelier d'artisanat à Dolisie</span>
+              </span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA final -->
+    <section class="cta-section" id="essai" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="cta">
+          <div class="cta__pattern" aria-hidden="true">
+            <img src="assets/img/hero.jpg" alt="" width="1920" height="1080" loading="lazy">
+          </div>
+          <h2 id="cta-title">Prêt à voir votre boutique autrement ?</h2>
+          <p>14 jours offerts, sans carte bancaire. Ensuite 9 900 FCFA par mois, sans engagement.</p>
+          <div class="cta__actions">
+            <a class="btn btn--primary btn--lg" href="dashboard.html">Essai gratuit</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="logo logo--inverse" href="index.html" aria-label="EcomPilot, accueil">
+            <svg class="logo__icon" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+              <path d="M45.4 50.4A28 28 0 1 1 18.6 50.4" fill="none" stroke="#FBF8F3" stroke-width="6" stroke-linecap="round"/>
+              <path d="M18.6 50.4A22 22 0 0 1 50 26" fill="none" stroke="#FBF8F3" stroke-width="6" stroke-linecap="round" opacity=".6"/>
+              <circle cx="50" cy="26" r="5" fill="#FBF8F3"/>
+            </svg>
+            <span class="logo__word"><span class="logo__ecom">Ecom</span><span class="logo__pilot">Pilot</span></span>
+          </a>
+          <p>Le tableau de bord des boutiques en ligne d'Afrique francophone.</p>
+        </div>
+
+        <nav class="footer-col" aria-label="Produit">
+          <h3>Produit</h3>
+          <a href="#fonctionnalites">Fonctionnalités</a>
+          <a href="#catalogue">Catalogue</a>
+          <a href="dashboard.html">Démo</a>
+        </nav>
+
+        <nav class="footer-col" aria-label="Entreprise">
+          <h3>Entreprise</h3>
+          <a href="#temoignages">Témoignages</a>
+          <a href="#essai">Tarifs</a>
+          <a href="mailto:contact@ecompilot.example">Contact</a>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 EcomPilot. Projet fictif.</p>
+        <div class="footer-legal">
+          <a href="#contact">Mentions légales</a>
+          <a href="#contact">Confidentialité</a>
+          <a href="#contact">LinkedIn</a>
+          <a href="#contact">Instagram</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js" defer></script>
+  <script src="js/icons.js" defer></script>
+  <script src="js/chart.js" defer></script>
+  <script src="js/ui.js" defer></script>
+  <script src="js/landing.js" defer></script>
+</body>
+</html>

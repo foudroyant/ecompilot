@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vue d'ensemble — EcomPilot</title>
+  <meta name="description" content="Tableau de bord EcomPilot : chiffre d'affaires, commandes, livraisons et répartition des statuts sur les 30 derniers jours.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icon-192.svg">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#1F5C4A">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <div class="app">
+    <aside class="sidebar" id="sidebar" aria-label="Navigation du tableau de bord">
+      <a class="sidebar__brand logo logo--inverse" href="index.html" aria-label="EcomPilot, accueil">
+        <svg class="logo__icon" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+          <path d="M45.4 50.4A28 28 0 1 1 18.6 50.4" fill="none" stroke="#FBF8F3" stroke-width="6" stroke-linecap="round"/>
+          <path d="M18.6 50.4A22 22 0 0 1 50 26" fill="none" stroke="#FBF8F3" stroke-width="6" stroke-linecap="round" opacity=".6"/>
+          <circle cx="50" cy="26" r="5" fill="#FBF8F3"/>
+        </svg>
+        <span class="logo__word"><span class="logo__ecom">Ecom</span><span class="logo__pilot">Pilot</span></span>
+      </a>
+
+      <nav class="sidebar__nav" aria-label="Sections">
+        <a class="nav-item" href="dashboard.html" aria-current="page">
+          <span data-icon="layout-dashboard"></span><span class="nav-item__label">Vue d'ensemble</span>
+        </a>
+        <a class="nav-item" href="#commandes">
+          <span data-icon="shopping-bag"></span><span class="nav-item__label">Commandes</span>
+        </a>
+        <button class="nav-item" type="button" data-demo-toast="Module Livraisons : tournées et suivi des colis dans la version complète.">
+          <span data-icon="truck"></span><span class="nav-item__label">Livraisons</span>
+        </button>
+        <button class="nav-item" type="button" data-demo-toast="Module Produits : catalogue, stocks et prix dans la version complète.">
+          <span data-icon="package"></span><span class="nav-item__label">Produits</span>
+        </button>
+        <button class="nav-item" type="button" data-demo-toast="Module Statistiques : analyses détaillées dans la version complète.">
+          <span data-icon="chart-line"></span><span class="nav-item__label">Statistiques</span>
+        </button>
+        <button class="nav-item" type="button" data-demo-toast="Paramètres du compte : démonstration.">
+          <span data-icon="settings"></span><span class="nav-item__label">Paramètres</span>
+        </button>
+      </nav>
+
+      <div class="sidebar__user">
+        <span class="avatar" aria-hidden="true">SB</span>
+        <span class="sidebar__user-info">
+          <span class="sidebar__user-name">Stéphane B.</span><br>
+          <span class="sidebar__user-role">Administrateur</span>
+        </span>
+      </div>
+    </aside>
+
+    <div class="sidebar-backdrop" id="sidebar-backdrop" hidden></div>
+
+    <div class="app-main">
+      <main id="main">
+        <header class="page-head">
+          <div>
+            <h1 class="page-head__title">Vue d'ensemble</h1>
+            <p class="page-head__sub">Mardi 10 novembre 2026, 30 derniers jours</p>
+          </div>
+
+          <div class="page-head__actions">
+            <button class="icon-btn sidebar-toggle" type="button" id="sidebar-toggle" aria-controls="sidebar" aria-expanded="false" aria-label="Ouvrir le menu">
+              <span data-icon="menu"></span>
+            </button>
+
+            <label class="field search" for="order-search">
+              <span data-icon="search" data-icon-size="18"></span>
+              <span class="u-sr-only">Rechercher une commande</span>
+              <input id="order-search" type="search" placeholder="Rechercher une commande" autocomplete="off">
+            </label>
+
+            <div class="popover-wrap">
+              <button class="icon-btn icon-btn--notif" type="button" id="notif-toggle" aria-expanded="false" aria-controls="notif-popover" aria-label="Notifications, 3 non lues">
+                <span data-icon="bell"></span>
+                <span class="icon-btn__dot"></span>
+              </button>
+              <div class="popover" id="notif-popover" hidden>
+                <div class="popover__head">
+                  <span>Notifications</span>
+                  <span>3 nouvelles</span>
+                </div>
+                <a class="popover__item" href="#commandes">
+                  <span class="popover__dot"></span>
+                  <span>
+                    <span>12 commandes attendent une confirmation.</span>
+                    <span class="popover__time">Il y a 18 min</span>
+                  </span>
+                </a>
+                <a class="popover__item" href="#livraisons">
+                  <span class="popover__dot" style="background: var(--mint);"></span>
+                  <span>
+                    <span>La tournée Pointe-Noire est partie à 9 h 40.</span>
+                    <span class="popover__time">Il y a 1 h</span>
+                  </span>
+                </a>
+                <a class="popover__item" href="#produits">
+                  <span class="popover__dot" style="background: var(--success);"></span>
+                  <span>
+                    <span>Stock faible : Panier tressé (4 pièces).</span>
+                    <span class="popover__time">Il y a 2 h</span>
+                  </span>
+                </a>
+              </div>
+            </div>
+
+            <button class="btn btn--primary" type="button" data-dialog-open="#order-dialog" aria-label="Nouvelle commande">
+              <span data-icon="plus" data-icon-size="18"></span>
+              <span class="btn__label">Nouvelle commande</span>
+            </button>
+          </div>
+        </header>
+
+        <section class="kpi-grid" id="kpi-grid" aria-label="Indicateurs clés"></section>
+
+        <div class="analytics-grid">
+          <article class="card chart-card" aria-labelledby="sales-title">
+            <div class="card-head">
+              <div>
+                <h2 class="card-title" id="sales-title">Ventes quotidiennes</h2>
+                <p class="card-sub" id="sales-sub">12 octobre – 10 novembre 2026</p>
+              </div>
+              <div class="pills" role="group" aria-label="Période affichée">
+                <button class="pill" type="button" data-period="7d" aria-pressed="false">7 j</button>
+                <button class="pill" type="button" data-period="30d" aria-pressed="true">30 j</button>
+                <button class="pill" type="button" data-period="12m" aria-pressed="false">12 mois</button>
+              </div>
+            </div>
+
+            <div id="sales-chart"></div>
+
+            <div class="chart-card__foot">
+              <span class="status status--shipping">En cours</span>
+              <span><strong>60</strong> commandes en cours de livraison sur <strong>520</strong> reçues</span>
+            </div>
+          </article>
+
+          <article class="card donut-card" aria-labelledby="donut-title">
+            <div class="card-head">
+              <div>
+                <h2 class="card-title" id="donut-title">Répartition des statuts</h2>
+                <p class="card-sub">520 commandes reçues</p>
+              </div>
+              <span class="badge" style="min-height: 26px; font-size: 11px;">30 jours</span>
+            </div>
+
+            <div class="donut-body">
+              <div id="status-donut"></div>
+              <ul class="legend" id="status-legend"></ul>
+            </div>
+          </article>
+        </div>
+
+        <section class="card table-card" id="commandes" aria-labelledby="orders-title">
+          <div class="table-card__head">
+            <div>
+              <h2 class="card-title" id="orders-title">Dernières commandes</h2>
+              <p class="card-sub" id="orders-head-count">Les 8 plus récentes sur 520</p>
+            </div>
+            <button class="link-arrow" type="button" data-demo-toast="Toutes les commandes : vue complète disponible dans la version complète.">
+              Voir tout <span data-icon="arrow-right" data-icon-size="16"></span>
+            </button>
+          </div>
+
+          <div class="table-wrap">
+            <table class="table" id="orders-table">
+              <caption class="u-sr-only">Huit dernières commandes reçues, triées de la plus récente à la plus ancienne</caption>
+              <thead>
+                <tr>
+                  <th scope="col">N°</th>
+                  <th scope="col">Client</th>
+                  <th scope="col">Ville</th>
+                  <th scope="col">Produit</th>
+                  <th scope="col" class="is-num">Montant</th>
+                  <th scope="col">Statut</th>
+                  <th scope="col">Date</th>
+                </tr>
+              </thead>
+              <tbody id="orders-body"></tbody>
+            </table>
+          </div>
+
+          <div class="table-card__foot">
+            <p id="orders-count">Affichage 1 à 8 sur 520</p>
+            <nav class="pagination" aria-label="Pagination des commandes">
+              <button class="page-btn" type="button" aria-label="Page précédente" disabled>
+                <span data-icon="chevron-right" data-icon-size="16" style="transform: rotate(180deg);"></span>
+              </button>
+              <button class="page-btn" type="button" aria-current="page">1</button>
+              <button class="page-btn" type="button">2</button>
+              <button class="page-btn" type="button">3</button>
+              <button class="page-btn" type="button" aria-label="Page 4">4</button>
+              <button class="page-btn" type="button" aria-label="Page 65">65</button>
+              <button class="page-btn" type="button" aria-label="Page suivante">
+                <span data-icon="chevron-right" data-icon-size="16"></span>
+              </button>
+            </nav>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <dialog class="modal" id="order-dialog" aria-labelledby="order-dialog-title">
+    <div class="modal__head">
+      <div>
+        <h2 class="modal__title" id="order-dialog-title">Nouvelle commande</h2>
+        <p class="modal__sub">Démonstration : aucune donnée n'est enregistrée.</p>
+      </div>
+      <button class="icon-btn" type="button" data-dialog-close aria-label="Fermer la fenêtre">
+        <span data-icon="x" data-icon-size="18"></span>
+      </button>
+    </div>
+
+    <form id="order-form">
+      <div class="modal__body">
+        <div class="form-row">
+          <div>
+            <label class="field__label" for="order-client">Client</label>
+            <input class="input" id="order-client" name="client" type="text" placeholder="Nom du client" required>
+          </div>
+          <div>
+            <label class="field__label" for="order-city">Ville</label>
+            <select class="select" id="order-city" name="city">
+              <option>Brazzaville</option>
+              <option>Pointe-Noire</option>
+              <option>Dolisie</option>
+              <option>Ouesso</option>
+              <option>Nkayi</option>
+              <option>Owando</option>
+              <option>Gamboma</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="field__label" for="order-product">Produit</label>
+          <input class="input" id="order-product" name="product" type="text" placeholder="Ex. Tissu wax (6 yards)" required>
+        </div>
+
+        <div class="form-row">
+          <div>
+            <label class="field__label" for="order-amount">Montant (FCFA)</label>
+            <input class="input" id="order-amount" name="amount" type="number" min="0" step="500" placeholder="25 000" required>
+          </div>
+          <div>
+            <label class="field__label" for="order-status">Statut</label>
+            <select class="select" id="order-status" name="status">
+              <option value="pending">En attente</option>
+              <option value="shipping">En cours</option>
+              <option value="delivered">Livrée</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal__foot">
+        <button class="btn btn--ghost" type="button" data-dialog-close>Annuler</button>
+        <button class="btn btn--primary" type="submit">Créer la commande</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="js/data.js" defer></script>
+  <script src="js/icons.js" defer></script>
+  <script src="js/chart.js" defer></script>
+  <script src="js/ui.js" defer></script>
+  <script src="js/dashboard.js" defer></script>
+</body>
+</html>
